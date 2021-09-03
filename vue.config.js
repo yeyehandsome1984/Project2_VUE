@@ -1,5 +1,7 @@
 module.exports = {
-    publicPath: "./", // 基本路径
-    outputDir: "dosc",
+    publicPath: process.env.NODE_ENV === 'production'
+      ? '/shop-admin/'
+      : '/',
+    outputDir: "docs",
     assetsDir: 'static'
 }
