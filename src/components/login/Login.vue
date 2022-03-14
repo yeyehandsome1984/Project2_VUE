@@ -1,16 +1,16 @@
 <template>
     <div id="container">
         <div id="title">
-            <h1>电商后台管理系统</h1>
+            <h1>Login To Enter Human Management System</h1>
         </div>
         <div class="input">
-            <el-input v-model="name" prefix-icon="el-icon-user" placeholder="请输入用户名"></el-input>
+            <el-input v-model="name" prefix-icon="el-icon-user" placeholder="Please Input Username"></el-input>
         </div>
         <div class="input">
-            <el-input v-model="password" prefix-icon="el-icon-lock" placeholder="请输入密码" auto-complete="new-password" show-password></el-input>
+            <el-input v-model="password" prefix-icon="el-icon-lock" placeholder="Please Input Password" auto-complete="new-password" show-password></el-input>
         </div>
         <div class="input">
-            <el-button @click="login" style="width:500px" type="primary" :disabled="disabled">登录</el-button>
+            <el-button @click="login" style="width:500px" type="primary" :disabled="disabled">Login</el-button>
         </div>
     </div>
 </template>
