@@ -1,16 +1,16 @@
 <template>
     <div style="margin-bottom:20px">
-        <good-edit @contentChange="contentChange"></good-edit>
+        <desc-edit @contentChange="contentChange"></desc-edit>
     </div>
     <el-container class="content-row">
-        <el-button type="success" plain @click="submit">提交</el-button>
+        <el-button type="success" plain @click="submit" style="font-weight: bold">Submit</el-button>
         <div style="margin-left:40px"></div>
-        <el-button type="warning" plain @click="cancel">取消</el-button>
+        <el-button type="warning" plain @click="cancel" style="font-weight: bold">Cancel</el-button>
     </el-container>
 </template>
 
 <script>
-import GoodEdit from './GoodEdit.vue'
+import DescEdit from './DescriptionEdit.vue'
 export default {
     data() {
         return {
@@ -18,7 +18,7 @@ export default {
         }
     },
     components: {
-        GoodEdit:GoodEdit
+        DescEdit:DescEdit
     },
     methods: {
         contentChange(content) {
@@ -30,7 +30,7 @@ export default {
         submit() {
             this.$message({
                 type:'success',
-                message:'设置详情HTML：' + this.content
+                message:'Message Submitted：' + this.content
             })
         }
     }

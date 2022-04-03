@@ -23,7 +23,7 @@
             </el-container>
             <el-container class="content-row">
                 <div class="input-tip">
-                    订单类型:
+                    Type:
                 </div>
                 <div class="input-field">
                     <el-input v-model="queryParams.type"></el-input>
@@ -35,22 +35,22 @@
                     <el-input v-model="queryParams.id"></el-input>
                 </div>
                 <div class="input-tip">
-                    支付时间:
+                    Register Time:
                 </div>
                 <div class="input-field">
                     <el-date-picker
                     type="daterange"
-                    range-separator="至"
-                    start-placeholder="开始日期"
-                    end-placeholder="结束日期"
+                    range-separator="to"
+                    start-placeholder="beginning"
+                    end-placeholder="ending"
                     v-model="queryParams.payTime">
                     </el-date-picker>
                 </div>             
             </el-container>
             <el-container class="content-row">
-                <el-button type="primary" @click="search">搜索</el-button>
-                <el-button type="primary" @click="clear">清空搜索条件</el-button>
-                <el-button type="primary" @click="exportData">导出</el-button>
+                <el-button type="primary" @click="search">Search</el-button>
+                <el-button type="primary" @click="clear">Clean</el-button>
+                <el-button type="primary" @click="exportData">Export</el-button>
             </el-container>
         </div>
         <div>

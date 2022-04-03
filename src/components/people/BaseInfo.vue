@@ -2,7 +2,7 @@
     <div>
         <el-container class="content-row">
             <div class="input-tip">
-                商品名称:
+                name:
             </div>
             <div class="input-field">
                 <el-input v-model="queryParams.name"></el-input>
@@ -10,15 +10,32 @@
         </el-container>
         <el-container class="content-row">
             <div class="input-tip">
-                商品简介:
+                Company:
             </div>
             <div class="input-field">
                 <el-input type="textarea" :rows="3" v-model="queryParams.desc"></el-input>
             </div>
         </el-container>
+                <el-container class="content-row">
+            <div class="input-tip">
+                Phone Number:
+            </div>
+            <div class="input-field">
+                <el-input type="textarea" :rows="3" v-model="queryParams.phone"></el-input>
+            </div>
+        </el-container>
+                <el-container class="content-row">
+            <div class="input-tip">
+                Address:
+            </div>
+            <div class="input-field">
+                <el-input type="textarea" :rows="3" v-model="queryParams.address"></el-input>
+            </div>
+        </el-container>
+        
         <el-container class="content-row">
             <div class="input-tip">
-                商品封面:
+                Photos:
             </div>
                 <el-upload
                 :auto-upload="false"
@@ -29,7 +46,7 @@
         </el-container>
         <el-container class="content-row">
             <div class="input-tip">
-                列表图片:
+                Document:
             </div>
             <el-upload
             :auto-upload="false"
@@ -38,39 +55,40 @@
                 <i class="el-icon-plus"></i>
             </el-upload>
         </el-container>
+        
         <el-container class="content-row">
             <div class="input-tip">
-                上架日期:
+                Associated period:
             </div>
             <div class="input-field">
                 <el-date-picker
                 type="daterange"
-                range-separator="至"
-                start-placeholder="开始日期"
-                end-placeholder="结束日期"
+                range-separator="Tills"
+                start-placeholder="Beginning"
+                end-placeholder="Ending if applicable"
                 v-model="queryParams.timeRange">
                 </el-date-picker>
             </div>
         </el-container>
         <el-container class="content-row">
             <div class="input-tip">
-                商品分类:
+                Relationship Category:
             </div>
             <div class="input-field">
                 <el-select v-model="queryParams.category">
-                    <el-option key="0" label="男装" :value="0"></el-option>
-                    <el-option key="1" label="男鞋" :value="1"></el-option>
-                    <el-option key="2" label="围巾" :value="2"></el-option>
+                    <el-option key="0" label="Friend" :value="0"></el-option>
+                    <el-option key="1" label="Professional" :value="1"></el-option>
+                    <el-option key="2" label="Pro Friend" :value="2"></el-option>
                 </el-select>
             </div>
             <div style="margin-top:6px">
-                <el-button type="primary" size="mini" round @click="addCategory">添加分类</el-button>
+                <el-button type="primary" size="mini" round @click="addCategory">Add Category</el-button>
             </div>
         </el-container>
         <el-container class="content-row">
-            <el-button type="success" plain @click="submit">提交</el-button>
+            <el-button type="success" plain @click="submit">Submit</el-button>
             <div style="margin-left:40px"></div>
-            <el-button type="warning" plain @click="cancel">取消</el-button>
+            <el-button type="warning" plain @click="cancel">Cancel</el-button>
         </el-container>
     </div>
 </template>
@@ -82,6 +100,10 @@ export default {
             queryParams:{
                 name:"",
                 desc:"",
+                phone:"",
+                address:"",
+                linkedIn:"",
+                Interest:"",
                 timeRange:"",
                 category:0
             }
@@ -94,11 +116,11 @@ export default {
         submit() {
             this.$message({
                 type:'success',
-                message:'设置商品基本属性：' + JSON.stringify(this.queryParams)
+                message:'Set Basic Info：' + JSON.stringify(this.queryParams)
             })
         },
         addCategory() {
-            this.$router.push({name:'GoodCategory'})
+            this.$router.push({name:'Category'})
         }
     }
 }

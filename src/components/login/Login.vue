@@ -1,7 +1,7 @@
 <template>
     <div id="container">
         <div id="title">
-            <h1>Login To Enter Human Management System</h1>
+            <h1>Login To Enter SRMS Platform!</h1>
         </div>
         <div class="input">
             <el-input v-model="name" prefix-icon="el-icon-user" placeholder="Please Input Username"></el-input>
@@ -43,7 +43,7 @@ export default {
                 password:this.password
             })
             ElMessage({
-                message:'登录成功', 
+                message:'login Success', 
                 type:'success', 
                 duration:1500
             })

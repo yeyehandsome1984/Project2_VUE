@@ -1,7 +1,7 @@
 <template>
     <div class="content-container" direction="vertical">
         <el-container class="content-row">
-            <el-button type="primary" @click="addCategory">添加分类</el-button>
+            <el-button type="primary" @click="addCategory">Add New Category</el-button>
         </el-container>
         <div>
         <el-table
@@ -9,22 +9,22 @@
         tooltip-effect="dark"
         style="width: 100%">
             <el-table-column
-            label="分类ID"
+            label="CategoryID"
             width="100"
             prop="id">
             </el-table-column>
             <el-table-column
-            label="分类名称"
-            width="100"
+            label="Category"
+            width="200"
             prop="name">
             </el-table-column>
             <el-table-column
-            label="分类负责人"
-            width="500"
+            label="Person in Charge"
+            width="200"
             prop="manager">
             </el-table-column>
             <el-table-column
-            label="操作"
+            label="Delete"
             width="200"
             prop="time">
                 <template #default="scope">
@@ -43,16 +43,16 @@ export default {
             categoryList:[
                 {
                     id:1231,
-                    name:"男装",
-                    manager:"管理员用户01"
+                    name:"Friend",
+                    manager:""
                 },{
                     id:1131,
-                    name:"男鞋",
-                    manager:"管理员用户01"
+                    name:"Professional",
+                    manager:""
                 },{
                     id:1031,
-                    name:"帽子",
-                    manager:"管理员用户01"
+                    name:"Friend and Pro",
+                    manager:""
                 }
             ]
         }
@@ -62,14 +62,14 @@ export default {
             this.categoryList.splice(index,1)
         },
         addCategory() {
-            this.$prompt('请输入分类名','新增分类',{
-                confirmButtonText: '确定',
-                cancelButtonText: '取消',
+            this.$prompt('Please insert new Category',{
+                confirmButtonText: 'Confirm',
+                cancelButtonText: 'Cancel',
             }).then(({value})=>{
                 this.categoryList.push({
                     id:1000,
                     name:value,
-                    manager:"管理员用户01"
+                    manager:"Yichen"
                 })
             });
         }

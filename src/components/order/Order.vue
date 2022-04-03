@@ -4,47 +4,47 @@
         <div>
             <el-container class="content-row">
                 <div class="input-tip">
-                    商品名称:
+                    Name:
                 </div>
                 <div class="input-field">
                     <el-input v-model="queryParam.good"></el-input>
                 </div>
                 <div class="input-tip">
-                    收货人:
+                    Gender:
                 </div>
                 <div class="input-field">
                     <el-input v-model="queryParam.consignee"></el-input>
                 </div>
                 <div class="input-tip">
-                    支付时间:
+                    Associated Period:
                 </div>
                 <div class="input-field">
                     <el-date-picker
                     type="daterange"
-                    range-separator="至"
-                    start-placeholder="开始日期"
-                    end-placeholder="结束日期"
+                    range-separator="to"
+                    start-placeholder="Beginning"
+                    end-placeholder="Ending"
                     v-model="queryParam.payTime">
                     </el-date-picker>
                 </div>
             </el-container>
             <el-container class="content-row">
                 <div class="input-tip">
-                    用户名称:
+                    Company:
                 </div>
                 <div class="input-field">
                     <el-input v-model="queryParam.name"></el-input>
                 </div>
                 <div class="input-tip">
-                    手机号:
+                    Phone Num:
                 </div>
                 <div class="input-field">
                     <el-input v-model="queryParam.phone"></el-input>
                 </div>
-                <div class="input-tip">
-                    发货时间:
-                </div>
-                <div class="input-field">
+                <!-- <div class="input-tip">
+                    Deliver:
+                </div> -->
+                <!-- <div class="input-field">
                     <el-date-picker
                     type="daterange"
                     range-separator="至"
@@ -52,16 +52,16 @@
                     end-placeholder="结束日期"
                     v-model="queryParam.sendTime">
                     </el-date-picker>
-                </div>                
+                </div>                 -->
             </el-container>
         </div>
         <div class="content-row">
             <el-container>
-                <el-button type="primary" @click="requestData">筛选</el-button>
-                <el-button type="danger" @click="clear">清空筛选</el-button>
-                <el-button type="primary" @click="exportData">导出</el-button>
-                <el-button type="primary" @click="dispatchGoods">批量发货</el-button>
-                <el-button type="primary" @click="exportDispatchGoods">下载批量发货样单</el-button>
+                <el-button type="primary" @click="requestData">Select</el-button>
+                <el-button type="danger" @click="clear">Clear</el-button>
+                <el-button type="primary" @click="exportData">Output</el-button>
+                <!-- <el-button type="primary" @click="dispatchGoods">export</el-button>
+                <el-button type="primary" @click="exportDispatchGoods">massExport</el-button> -->
             </el-container>
         </div>
         <!-- list -->
@@ -123,8 +123,8 @@
                 label="操作"
                 width="200">
                     <template #default="scope">
-                        <el-button size="mini" type="danger" @click="deleteItem(scope.$index)">删除</el-button>
-                        <el-button size="mini" type="primary" @click="callUser(scope.row)">联系客户</el-button>            
+                        <el-button size="mini" type="danger" @click="deleteItem(scope.$index)">Delete</el-button>
+                        <el-button size="mini" type="primary" @click="callUser(scope.row)">Contact</el-button>            
                     </template>     
                 </el-table-column>
                 <el-table-column

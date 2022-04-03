@@ -1,11 +1,11 @@
 <template>
     <div>
         <div class="title">
-            <div style="line-height:35px;margin-left:20px">价格设置</div>
+            <div style="line-height:35px;margin-left:20px">Set Parameters</div>
         </div>
         <el-container class="content-row">
             <div class="input-tip">
-                市场价:
+                Importance:
             </div>
             <div class="input-field">
                 <el-input v-model="queryParams.maketPrice"></el-input>
@@ -13,7 +13,7 @@
         </el-container>
         <el-container class="content-row">
             <div class="input-tip">
-                展示价:
+                Urgency:
             </div>
             <div class="input-field">
                 <el-input v-model="queryParams.showPrice"></el-input>

@@ -2,9 +2,9 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import Login from '../components/login/Login.vue'
 import Home from '../components/home/Home.vue'
 import Order from '../components/order/Order.vue'
-import Goods from '../components/goods/Goods.vue'
-import AddGood from '../components/goods/AddGood.vue'
-import GoodCategory from '../components/goods/GoodCategory.vue'
+import Goods from '../components/people/Goods.vue'
+import AddGood from '../components/people/AddGood.vue'
+import Category from '../components/people/Category.vue'
 import ManagerList from '../components/manager/ManagerList.vue'
 import ManagerOrder from '../components/manager/ManagerOrder.vue'
 import ManagerReqList from '../components/manager/ManagerReqList.vue'
@@ -43,8 +43,8 @@ const Router = createRouter({
                 },
                 {
                     path:'category',
-                    component:GoodCategory,
-                    name:'GoodCategory'
+                    component:Category,
+                    name:'Category'
                 },
                 {
                     path:'ownerlist',
